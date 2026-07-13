@@ -1,0 +1,35 @@
+START
+
+Input Graph, Start_Room, End_Room
+
+Create an empty set Visited
+Add Start_Room to Visited
+
+Create an empty Queue
+Insert (Start_Room, [Start_Room]) into Queue
+
+WHILE Queue is not empty DO
+
+    Remove the first element from Queue
+    Store it as Current_Room and Path
+
+    IF Current_Room = End_Room THEN
+        Display Path
+        Display Number of Steps
+        STOP
+    END IF
+
+    FOR each Neighbor of Current_Room DO
+
+        IF Neighbor is not in Visited THEN
+            Add Neighbor to Visited
+            Insert (Neighbor, Path + Neighbor) into Queue
+        END IF
+
+    END FOR
+
+END WHILE
+
+Display "No Path Found"
+
+STOP
