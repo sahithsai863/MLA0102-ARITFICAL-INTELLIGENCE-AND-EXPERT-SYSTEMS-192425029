@@ -1,0 +1,35 @@
+BEGIN
+
+Create a priority queue PQ
+Insert (0, Source, [Source]) into PQ
+
+Create an empty set Visited
+
+WHILE PQ is not empty DO
+
+    Remove the node with the smallest cost
+    Store it as (Cost, CurrentNode, Path)
+
+    IF CurrentNode = Destination THEN
+        Print Path
+        Print Cost
+        STOP
+    END IF
+
+    IF CurrentNode is not visited THEN
+        Mark CurrentNode as visited
+
+        FOR each Neighbor and EdgeCost of CurrentNode DO
+            IF Neighbor is not visited THEN
+                NewCost = Cost + EdgeCost
+                Insert (NewCost, Neighbor, Path + Neighbor) into PQ
+            END IF
+        END FOR
+
+    END IF
+
+END WHILE
+
+Print "No Path Found"
+
+END
