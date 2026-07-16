@@ -1,0 +1,38 @@
+BEGIN
+
+Initialize Queue
+Initialize Visited Set
+
+Insert (0,0) into Queue
+Mark (0,0) as Visited
+
+WHILE Queue is not empty DO
+
+    Remove current state (A, B)
+
+    IF A = Goal OR B = Goal THEN
+        Print the sequence of states
+        STOP
+    END IF
+
+    Generate the following next states:
+
+        Fill Jug A
+        Fill Jug B
+        Empty Jug A
+        Empty Jug B
+        Pour Jug A into Jug B
+        Pour Jug B into Jug A
+
+    FOR each generated state DO
+        IF state is not visited THEN
+            Mark it visited
+            Insert it into Queue
+        END IF
+    END FOR
+
+END WHILE
+
+Print "Solution Not Found"
+
+END
