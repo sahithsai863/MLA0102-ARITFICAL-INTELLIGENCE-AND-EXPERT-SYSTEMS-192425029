@@ -1,0 +1,29 @@
+START
+
+Create a priority queue.
+
+Insert the Start Point into the priority queue.
+
+Set actual cost g(Start) = 0.
+
+WHILE the priority queue is not empty DO
+
+    Remove the location with the smallest f(n) = g(n) + h(n).
+
+    Display the current location.
+
+    IF current location is the Delivery Destination THEN
+        Display total cost.
+        STOP.
+
+    FOR each neighboring location DO
+        Calculate:
+            g(n) = Actual travel cost
+            h(n) = Estimated remaining distance
+            f(n) = g(n) + h(n)
+
+        Insert the neighbor into the priority queue.
+
+END WHILE
+
+STOP

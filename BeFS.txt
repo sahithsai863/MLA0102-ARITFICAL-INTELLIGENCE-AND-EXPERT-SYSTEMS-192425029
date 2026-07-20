@@ -1,0 +1,28 @@
+START
+
+Create a priority queue.
+
+Insert the source city into the priority queue based on its heuristic value.
+
+Mark all cities as unvisited.
+
+WHILE the priority queue is not empty DO
+
+    Remove the city with the smallest heuristic value.
+
+    Display the current city.
+
+    IF current city is the destination THEN
+        STOP.
+
+    Mark the city as visited.
+
+    FOR each neighboring city DO
+        IF the neighboring city is not visited THEN
+            Insert it into the priority queue using its heuristic value.
+        END IF
+    END FOR
+
+END WHILE
+
+STOP
